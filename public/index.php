@@ -11,26 +11,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
     <body>
         <?php
          require("../include/functionpdo.php");
-        $conn = connecte();
+        connecte();
         echo "<br><br>";
-        if ($conn !== null) {  // Vérifiez que la connexion est établie
-            $sql = "SELECT * FROM cours";
-            $stmt = $conn->query($sql);
-
-            if ($stmt->rowCount() > 0) {
-                // Affichage des en-têtes de colonnes
-                while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "CodeCours: " . $row["CODECOURS"]. " - LibelleCours: " . $row["LIBELLECOURS"]. " - NbJours: " . $row["NBJOURS"]. "<br>";
-                }
-            } else {
-                echo "0 results";
-            }
-
-            // Fermeture de la connexion
-            $conn = null;
-        } else {
-            echo "Failed to connect to the database.";
-        }
+        recupere_Cours();
+        
             ?>
     </body>
 </html>
