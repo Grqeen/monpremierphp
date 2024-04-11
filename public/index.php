@@ -14,6 +14,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         connecte();
         echo "<br><br>";
         recupere_Cours();
+        echo "<br><br>";
+        recupere_employe_projet();
         
             ?>
     </body>
