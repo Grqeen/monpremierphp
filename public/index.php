@@ -12,7 +12,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         <?php
          require("../include/functionpdo.php");
         $conn = connecte();
-
+        echo "<br><br>";
         if ($conn !== null) {  // Vérifiez que la connexion est établie
             $sql = "SELECT * FROM cours";
             $stmt = $conn->query($sql);
@@ -20,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             if ($stmt->rowCount() > 0) {
                 // Affichage des en-têtes de colonnes
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo "id: " . $row["CODECOURS"]. " - Nom: " . $row["LIBELLECOURS"]. " - Description: " . $row["NBJOURS"]. "<br>";
+                    echo "CodeCours: " . $row["CODECOURS"]. " - LibelleCours: " . $row["LIBELLECOURS"]. " - NbJours: " . $row["NBJOURS"]. "<br>";
                 }
             } else {
                 echo "0 results";
